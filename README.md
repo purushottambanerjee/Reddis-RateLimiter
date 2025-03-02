@@ -1,3 +1,8 @@
+
+# Project Title
+
+A brief description of what this project does and who it's for
+
 # 🚀 Redis Rate Limiting Demo Application
 
 Welcome to the **Redis Rate Limiting Demo**! This is a simple yet powerful application built with **Spring Boot** and **Redis** that demonstrates how you can easily implement **rate limiting** to protect your APIs from abuse and overuse. 
@@ -31,7 +36,6 @@ To get started, you’ll need the following:
 
 Start by cloning this repository to your local machine:
 
-```bash
 git clone https://github.com/yourusername/redis-rate-limiting-demo.git
 cd redis-rate-limiting-demo
 
@@ -40,7 +44,8 @@ If you don’t have Redis installed, don’t worry! You can quickly spin up a Re
 
 bash
 Copy
-```docker run --name redis -p 6379:6379 -d redis
+
+docker run --name redis -p 6379:6379 -d redis
 This will start Redis in the background and expose it on port 6379. Now Redis is ready to store request counts!
 
 ### 3. Build and Run the Application
@@ -50,8 +55,8 @@ With Maven:
 
 bash
 Copy
-```mvn clean install
-```mvn spring-boot:run
+``mvn clean install 
+mvn spring-boot:run``
 With Gradle:
 
 bash
@@ -79,12 +84,9 @@ To check the request count for a user:
 
 bash
 Copy
-``` docker exec -it redis redis-cli get rate_limit:{username}
+`docker exec -it redis redis-cli get rate_limit:{username}`
 To see how many seconds are left until the key expires:
 
-bash
-Copy
-``` docker exec -it redis redis-cli ttl rate_limit:{username}
 Using RedisInsight
 Download RedisInsight.
 Connect to your Redis instance running on Docker at localhost:6379.
